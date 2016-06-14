@@ -17,6 +17,7 @@
 		09FD476C1D0837F900DFE654 /* CellListTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD476B1D0837F900DFE654 /* CellListTaskTableViewCell.swift */; };
 		09FD47701D08450B00DFE654 /* showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD476F1D08450B00DFE654 /* showAlert.swift */; };
 		09FD47721D0855FF00DFE654 /* trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD47711D0855FF00DFE654 /* trim.swift */; };
+		09FD47751D1028CA00DFE654 /* TaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD47741D1028CA00DFE654 /* TaksViewController.swift */; };
 		A71B0040F78C6A9BF6364506 /* Pods_RealmToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F17E5BB741B6572B1CE5DF1 /* Pods_RealmToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		09FD476B1D0837F900DFE654 /* CellListTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellListTaskTableViewCell.swift; sourceTree = "<group>"; };
 		09FD476F1D08450B00DFE654 /* showAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showAlert.swift; sourceTree = "<group>"; };
 		09FD47711D0855FF00DFE654 /* trim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trim.swift; sourceTree = "<group>"; };
+		09FD47741D1028CA00DFE654 /* TaksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaksViewController.swift; sourceTree = "<group>"; };
 		0F17E5BB741B6572B1CE5DF1 /* Pods_RealmToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855FEAC2BDFED484ACD72867 /* Pods-RealmToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmToDo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmToDo/Pods-RealmToDo.debug.xcconfig"; sourceTree = "<group>"; };
 		DC445C05B4D817491015FCA8 /* Pods-RealmToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmToDo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealmToDo/Pods-RealmToDo.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				09FD474F1D081DB300DFE654 /* ListTaskViewController.swift */,
 				09FD476B1D0837F900DFE654 /* CellListTaskTableViewCell.swift */,
+				09FD47731D1028A700DFE654 /* Task */,
 			);
 			name = ListTask;
 			sourceTree = "<group>";
@@ -124,6 +127,14 @@
 				09FD47541D081DB300DFE654 /* Assets.xcassets */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		09FD47731D1028A700DFE654 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				09FD47741D1028CA00DFE654 /* TaksViewController.swift */,
+			);
+			name = Task;
 			sourceTree = "<group>";
 		};
 		7734BE1D3F75EDB181290737 /* Pods */ = {
@@ -271,6 +282,7 @@
 				09FD47631D081E8500DFE654 /* TaskList.swift in Sources */,
 				09FD47721D0855FF00DFE654 /* trim.swift in Sources */,
 				09FD47501D081DB300DFE654 /* ListTaskViewController.swift in Sources */,
+				09FD47751D1028CA00DFE654 /* TaksViewController.swift in Sources */,
 				09FD47611D081E4600DFE654 /* Task.swift in Sources */,
 				09FD474E1D081DB300DFE654 /* AppDelegate.swift in Sources */,
 			);

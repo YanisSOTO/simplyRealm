@@ -97,7 +97,21 @@ class ListTaskViewController: UIViewController, UITableViewDelegate, UITableView
         }*/
         return [deleteAction]
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("taskSegue", sender: self.taskList[indexPath.row])
+    }
     // End
+    
+    //MARK: - Segue -
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let tasksViewController = segue.destinationViewController as! TaksViewController
+        tasksViewController.selectedList = sender as! TaskList
+
+    }
+    
+    //END
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -103,11 +103,31 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="taskListTableView" destination="baA-h4-QvF" id="nbM-xd-GHl"/>
+                        <segue destination="6Db-tC-8On" kind="show" identifier="taskSegue" id="qtr-bi-FbE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9h0-dq-mRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-156" y="487"/>
+        </scene>
+        <!--Taks View Controller-->
+        <scene sceneID="yv3-l2-ayi">
+            <objects>
+                <viewController id="6Db-tC-8On" customClass="TaksViewController" customModule="RealmToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nzB-D0-r0Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="O9f-cS-Ese"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K0G-ob-D2b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhp-3E-r1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="487"/>
         </scene>
     </scenes>
 </document>
