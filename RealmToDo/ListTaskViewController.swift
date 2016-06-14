@@ -17,12 +17,14 @@ class ListTaskViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var taskListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         readTasksAndUpdateUI()
     }
 
     //MARK: - @IBAction -
     @IBAction func addAction(sender: UIBarButtonItem) {
-        
         let alert = UIAlertController(title: "Add", message: "Enter your name list", preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
             textField.text = "Enter your text"
@@ -37,6 +39,7 @@ class ListTaskViewController: UIViewController, UITableViewDelegate, UITableView
             newList.name = textField.text!
             do { try uiRealm.write() {
                     uiRealm.add(newList)
+                self.readTasksAndUpdateUI()
                 }
             } catch {
                 print("Can't add the list")
@@ -47,12 +50,12 @@ class ListTaskViewController: UIViewController, UITableViewDelegate, UITableView
         }))
         alert.view.setNeedsLayout()
         self.presentViewController(alert, animated: true, completion: nil)
+        self.readTasksAndUpdateUI()
     }
     // End
     
     // MARK: - Get & Update Realm object
     func readTasksAndUpdateUI(){
-        
         taskList = uiRealm.objects(TaskList)
         //self.taskListsTableView.setEditing(false, animated: true)
         self.taskListTableView.reloadData()
@@ -68,18 +71,35 @@ class ListTaskViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("listCell", forIndexPath: indexPath) as! CellListTaskTableViewCell
         cell.nameLabel.text = taskList![indexPath.row].name
         cell.countTask.text = "\(taskList![indexPath.row].tasks.count) Tasks"
-       
         return (cell)
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Destructive, title: "Delete") { (deleteAction, indexPath) -> Void in
+            
+            let listToBeDeleted = self.taskList[indexPath.row]
+            do { try uiRealm.write() {
+                uiRealm.delete(listToBeDeleted)
+                self.readTasksAndUpdateUI()
+                }
+            } catch {
+                print("Can't delete the list")
+            }
+        }
+        
+       
+       /* let editAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Edit") { (editAction, indexPath) -> Void in
+            
+            //let listToBeUpdated = self.taskList[indexPath.row]
+            self.readTasksAndUpdateUI()
+            
+        }*/
+        return [deleteAction]
     }
     // End
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
-
-
-
